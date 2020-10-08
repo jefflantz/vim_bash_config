@@ -9,8 +9,8 @@ echo -e "${GREEN}---------------------------------------------------------------
      ~|    |~         Local time is $(date)
       |____|
      / ${RED}####${GREEN} \\
-----------------------------------------------------------------------------------------
-"
+----------------------------------------------------------------------------------------"
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -126,7 +126,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH=/usr/local/go/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
 
 export HISTTIMEFORMAT="%m/%d/%y %T "
 complete -C /usr/local/bin/terraform terraform
+alias cornell-ssh="ssh -i ~/.ssh/id_rsa -o TCPKeepAlive=yes ubuntu@128.84.9.163"
