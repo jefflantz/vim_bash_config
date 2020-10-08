@@ -1,6 +1,7 @@
-GREEN='\033[0;32m'
-RED='\033[0;33m'
-echo -e "${GREEN}----------------------------------------------------------------------------------------
+if [ ! -z "$PS1" ]; then
+	GREEN='\033[0;32m'
+	RED='\033[0;33m'
+	echo -e "${GREEN}----------------------------------------------------------------------------------------
         /\\               
        /  \\
       /    \\     
@@ -11,6 +12,7 @@ echo -e "${GREEN}---------------------------------------------------------------
      / ${RED}####${GREEN} \\
 ----------------------------------------------------------------------------------------
 "
+fi
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -130,3 +132,5 @@ export PATH=/usr/local/go/bin:$PATH
 
 export HISTTIMEFORMAT="%m/%d/%y %T "
 complete -C /usr/local/bin/terraform terraform
+alias tf='terraform'
+alias kc='kubectl'
